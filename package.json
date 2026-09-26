@@ -1,0 +1,23 @@
+{
+  "name": "edgeverve-pda-node-js",
+  "version": "1.0.0",
+  "description": "Node.js and TypeScript training repository",
+  "main": "modules/index.js",
+  "scripts": {
+    "basics:datatypes": "node js-basics/datatypes.js",
+    "basics:functions": "node js-basics/functions.js",
+    "basics:objects": "node js-basics/objects.js",
+    "basics:strings": "node js-basics/strings.js",
+    "modules:calc": "node modules/index.js",
+    "modules:welcome": "node modules/app.js",
+    "ts:run": "node typescript/TypeScriptFirst.js",
+    "ts:compile": "tsc typescript/TypeScriptFirst.ts"
+  },
+  "keywords": [
+    "nodejs",
+    "typescript",
+    "javascript"
+  ],
+  "author": "",
+  "license": "ISC"
+}

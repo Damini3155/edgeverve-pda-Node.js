@@ -1,3 +1,5 @@
+// exports is used to share functions and objects outside the current file
+
 exports.add = function (x, y) {
   return x + y;
 };

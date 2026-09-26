@@ -275,6 +275,3 @@ Open your browser and navigate to `http://localhost:3000` to see your running No
 - Ideal for **real-time web apps, REST APIs, streaming platforms, and microservices**.
 - Core advantages include **easy scalability, fast execution, module caching, data streaming, and full-stack JS development**.
 - Avoid Node.js for **CPU-intensive applications** (like complex calculations or video encoding) that block the single main thread.
-
----
-*Document created for DSA & Backend Engineering Prep.*
