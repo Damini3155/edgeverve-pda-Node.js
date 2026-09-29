@@ -1,22 +1,31 @@
 {
   "name": "edgeverve-pda-node-js",
   "version": "1.0.0",
-  "description": "Node.js and TypeScript training repository",
-  "main": "modules/index.js",
+  "description": "Comprehensive daily learning repository for Node.js, Express, and TypeScript",
+  "main": "02-modules/calc-demo.js",
   "scripts": {
-    "basics:datatypes": "node js-basics/datatypes.js",
-    "basics:functions": "node js-basics/functions.js",
-    "basics:objects": "node js-basics/objects.js",
-    "basics:strings": "node js-basics/strings.js",
-    "modules:calc": "node modules/index.js",
-    "modules:welcome": "node modules/app.js",
-    "ts:run": "node typescript/TypeScriptFirst.js",
-    "ts:compile": "tsc typescript/TypeScriptFirst.ts"
+    "basics:datatypes": "node 01-js-basics/datatypes.js",
+    "basics:functions": "node 01-js-basics/functions.js",
+    "basics:objects": "node 01-js-basics/objects.js",
+    "basics:strings": "node 01-js-basics/strings.js",
+    "modules:calc": "node 02-modules/calc-demo.js",
+    "modules:welcome": "node 02-modules/welcome-demo.js",
+    "http:basic": "node 03-http/01-basic-server.js",
+    "http:inspect": "node 03-http/02-inspect-requests.js",
+    "http:routes": "node 03-http/03-http-routing.js",
+    "express:routes": "node 04-express/01-basic-routes.js",
+    "express:students": "node 04-express/02-student-api.js",
+    "ts:compile": "tsc 05-typescript/greeter.ts",
+    "ts:run": "node 05-typescript/greeter.js",
+    "api:server": "node 06-rest-api/server.js",
+    "api:middleware": "node 06-rest-api/middleware.js"
   },
   "keywords": [
     "nodejs",
+    "javascript",
+    "express",
     "typescript",
-    "javascript"
+    "backend-development"
   ],
   "author": "",
   "license": "ISC"

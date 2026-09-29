@@ -1,0 +1,22 @@
+{
+  "name": "student-rest-api",
+  "version": "1.0.0",
+  "description": "Full CRUD RESTful API with Express.js and custom middleware",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "server": "node server.js",
+    "middleware": "node middleware.js"
+  },
+  "keywords": [
+    "express",
+    "rest-api",
+    "crud",
+    "middleware"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}

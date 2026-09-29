@@ -1,0 +1,21 @@
+{
+  "name": "express-practice",
+  "version": "1.0.0",
+  "description": "Express.js routing, middleware, and REST API practice",
+  "main": "01-basic-routes.js",
+  "scripts": {
+    "start": "node 01-basic-routes.js",
+    "routes": "node 01-basic-routes.js",
+    "students": "node 02-student-api.js"
+  },
+  "keywords": [
+    "express",
+    "routing",
+    "rest-api"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
