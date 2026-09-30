@@ -1,29 +1,16 @@
 const express = require("express");
 const app = express();
-
 const logger = require("./logger");
 const requestTime = require("./requstTime");
+const firstMiddleware = require("./firstMiddleware");
 const checkAuth = require("./auth");
 
-function firstMiddleware(req, res, next) {
-  console.log("First Middleware");
-  next();
-}
-
-function secondMiddleware(req, res, next) {
-  console.log("second Middleware");
-  next();
-}
-
-app.get("/dashboard", checkAuth, (req, res) => {
-  res.send("Dashboard");
-});
 
 app.use(logger);
 app.use(firstMiddleware);
-app.use(secondMiddleware);
 app.use(requestTime);
-
+app.use(checkAuth);
+const checkAuth = require("./auth");
 app.get("/", (req, res) => {
   res.send("Home page");
 });
@@ -33,5 +20,5 @@ app.get("/about", (req, res) => {
 });
 
 app.listen(3001, () => {
-  console.log("server running on port 3001");
+  console.log("serever runnint on port 3001");
 });
