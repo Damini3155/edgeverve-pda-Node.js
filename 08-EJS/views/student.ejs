@@ -1,9 +1,18 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Students</title>
-    </head>
-    <body>
-        <h1>Student List</h1>
-    </body>
+<head>
+    <title>Students</title>
+</head>
+<body>
+    <h1>Student List</h1>
+    <ul>
+        <% student.forEach(student => { %>
+            <li>
+                <%= student.id %>
+                <%= student.name %>
+                <%= student.department %>
+            </li>
+        <% }); %>
+    </ul>
+</body>
 </html>
