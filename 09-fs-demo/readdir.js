@@ -1,14 +1,4 @@
 const fs = require("fs");
-
-fs.readFile("./data/messages.txt", "utf8", (err, data) => {
-  if (err) {
-    console.log(err);
-    return;
-  }
-
-  console.log(data);
-});
-
 fs.readdir("./data", (err, files) => {
     if(err){
         console.log(err);
