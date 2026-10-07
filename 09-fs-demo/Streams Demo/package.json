@@ -1,5 +1,5 @@
 {
-  "name": "09-fs-demo",
+  "name": "streams-demo",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
