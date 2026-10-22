@@ -1,57 +1,41 @@
 const express = require('express');
-const jwt = require('jsonwebtoken');
-
 const app = express();
+
 app.use(express.json());
 
-const username = 'admin';
-const password = '12345';
-const secretKey = 'mysecretkey';
+// Users list
+const users = [
+    { username: 'Damini', role: 'Admin', lastAccess: '2026-10-20' },
+    { username: 'Ravi', role: 'User', lastAccess: '2026-10-18' },
+    { username: 'Priya', role: 'Manager', lastAccess: '2026-10-05' },
+    { username: 'Amit', role: 'User', lastAccess: '2026-10-22' }
+];
 
-// POST - Login
-app.post('/login', (req, res) => {
-    const { username: user, password: pass } = req.body;
-
-    if (user === username && pass === password) {
-        const token = jwt.sign({ username: user }, secretKey, {
-            expiresIn: '1h'
-        });
-
-        res.json({
-            message: 'Login successful',
-            token: token
-        });
-    } else {
-        res.status(401).json({
-            message: 'Invalid username or password'
-        });
-    }
+// Middleware for request logging
+app.use((req, res, next) => {
+    console.log(`${req.method} ${req.url} - ${new Date().toISOString()}`);
+    next();
 });
 
-// GET - Protected route
-app.get('/protected', (req, res) => {
-    const authHeader = req.headers.authorization;
+// GET - Retrieve all users
+app.get('/users', (req, res) => {
+    res.json(users);
+});
 
-    if (!authHeader || !authHeader.startsWith('Bearer ')) {
-        return res.status(401).json({
-            message: 'Authentication token missing'
-        });
-    }
+// GET - Filter users who accessed within the last 10 days
+app.get('/users/recent', (req, res) => {
+    const currentDate = new Date();
+    const tenDaysAgo = new Date();
 
-    const token = authHeader.split(' ')[1];
+    tenDaysAgo.setDate(currentDate.getDate() - 10);
 
-    try {
-        const decoded = jwt.verify(token, secretKey);
+    const recentUsers = users.filter(user => {
+        const lastAccessDate = new Date(user.lastAccess);
+        return lastAccessDate >= tenDaysAgo &&
+               lastAccessDate <= currentDate;
+    });
 
-        res.json({
-            message: `Welcome ${decoded.username}`,
-            username: decoded.username
-        });
-    } catch (error) {
-        res.status(401).json({
-            message: 'Invalid or expired token'
-        });
-    }
+    res.json(recentUsers);
 });
 
 // Start server
