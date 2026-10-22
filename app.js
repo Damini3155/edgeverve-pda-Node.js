@@ -1,21 +1,14 @@
 const express = require('express');
 const app = express();
 
-const userRoutes = require('./routes/users');
-
 app.use(express.json());
 
-// Request logging middleware
-app.use((req, res, next) => {
-    console.log(`${req.method} ${req.url} - ${new Date().toISOString()}`);
-    next();
-});
+const carRoutes = require('./routes/cars');
 
-// Root route returns filtered users
-app.use('/', userRoutes);
+app.use('/', carRoutes);
 
-const PORT = process.env.PORT || 3001;
+const port = process.env.PORT || 3001;
 
-app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
+app.listen(port, () => {
+    console.log(`Server running on port ${port}`);
 });
